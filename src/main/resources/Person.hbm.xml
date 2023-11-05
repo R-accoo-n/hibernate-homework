@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping>
+    <class name="com.example.hibernatehomework.models.Person" table="persons">
+        <id name="id" type="int" column="id"><generator class="native"/></id>
+        <property name="name" type="string" column="name" not-null="true"/>
+        <property name="age" type="int" column="age" not-null="false"/>
+        <one-to-one name="address" class="com.example.hibernatehomework.models.Address" cascade="save-update" column="address"></one-to-one>
+    </class>
+</hibernate-mapping>
